@@ -53,6 +53,10 @@ const Api = {
         url: `/customer/apip/product/get-new-arrivals`,
         method: 'GET',
     });
+    Api.Product.IphoneArrivals = () => $.ajax({
+        url: `/customer/apip/product/get-iphone-arrivals`,
+        method: 'GET',
+    });
     Api.Product.DiscountProducts = () => $.ajax({
         url: `/customer/apip/product/get-discount`,
         method: 'GET',

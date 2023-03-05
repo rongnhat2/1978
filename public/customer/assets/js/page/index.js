@@ -21,6 +21,50 @@ const View = {
                                     </div>`
                 } 
                 $("#new-arrivals ul").append(`
+                    <li class="col-6 col-wd-2 col-md-2 product-item">
+                        <div class="product-item__outer h-100">
+                            <div class="product-item__inner px-xl-4 p-3">
+                                <div class="product-item__body pb-xl-2">
+                                    <div class="mb-2"><a href="/category?tag=${product_value.category_id}" class="font-size-12 text-gray-5">${product_value.category_name}</a></div>
+                                    <h5 class="mb-1 product-item__title"><a href="/product/${product_value.slug}?id=${product_value.id}" class="text-blue font-weight-bold">${product_value.name}</a></h5>
+                                    <div class="mb-2">
+                                        <a href="/product/${product_value.slug}?id=${product_value.id}" class="d-block text-center rect-1-1 block-image">
+                                            <img class="img-fluid rect-1-1 lazy-load" src="" data-src="/${image}" alt="${product_value.search_name}">
+                                        </a>
+                                    </div>
+                                    <div class="flex-center-between mb-1">
+                                        <div class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                            ${price_content} 
+                                        </div>
+                                        <div class="prodcut-add-cart">
+                                            <div class="btn-add-cart btn-primary transition-3d-hover action-add-to-card" data-id="${product_value.id}" atr="Add to card">
+                                                ${cards.includes(product_value.id+"") ? `<i class="fas fa-check"></i>` : `<i class="ec ec-add-to-cart"></i>`}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </li>
+                `)
+            })
+        },
+        renderIphone(data){ 
+            var cards = localStorage.getItem("card") == null ? "" : localStorage.getItem("card").split(",");
+            data.map(v => {
+                var product_value   = v.data_product;
+                var discount_value  = v.data_discount;
+                var image           = product_value.images.split(",")[0];
+                var price_content   = '';
+                if (discount_value == 0) {
+                    price_content = `<div class="prodcut-price"> <div class="text-gray-100">${View.formatNumber(product_value.prices)+"đ"}</div> </div>`
+                }else{
+                    price_content = `<div class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                        <ins class="font-size-20 text-red text-decoration-none mr-2">${View.formatNumber(product_value.prices - (product_value.prices*discount_value/100))+"đ"}</ins>
+                                        <del class="font-size-12 tex-gray-6 position-absolute bottom-100">${View.formatNumber(product_value.prices)+"đ"}</del>
+                                    </div>`
+                } 
+                $("#iphone-arrivals ul").append(`
                     <li class="col-6 col-wd-3 col-md-4 product-item">
                         <div class="product-item__outer h-100">
                             <div class="product-item__inner px-xl-4 p-3">
@@ -278,6 +322,7 @@ const View = {
         getDiscountProducts();
         getBestDiscount();
         getQuickDiscount();
+        getIphone()
         // getViewed();
         $(document).on('click', `.category-tab-select`, function() {
             getItemCategory($(this).attr('data-id'));
@@ -328,6 +373,14 @@ const View = {
         Api.Product.Trending()
             .done(res => {
                 View.Product.renderTrending(res.data);
+            })
+            .fail(err => {  })
+            .always(() => { });
+    }
+    function getIphone(){
+        Api.Product.Iphone()
+            .done(res => {
+                View.Product.renderIphone(res.data);
             })
             .fail(err => {  })
             .always(() => { });

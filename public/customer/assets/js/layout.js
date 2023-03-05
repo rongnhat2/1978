@@ -167,7 +167,7 @@ const ViewIndex = {
                 $("#category-search").append(`<option value="${v.id}">${v.name}</option>`) 
                 $("#category-list-top").append(`
                     <li class="nav-item u-header__nav-item" data-event="hover">
-                        <a href="/category?tag=${v.id}" class="nav-link u-header__nav-link d-flex justify-content-start"><img src="/${v.image}" style="width: 30px; height: 30px; margin: 0 10px 0 0;" alt="">  ${v.name}</a>
+                        <a href="/category?tag=${v.id}" class="nav-link u-header__nav-link d-flex justify-content-start align-items-center"><img src="/${v.image}" style="width: 30px; height: 30px; margin: 0 10px 0 0;" alt="">  ${v.name}</a>
                     </li>
                 `)
             })  

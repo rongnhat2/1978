@@ -271,55 +271,16 @@
                 </div>
                 <!-- End Logo-Search-header-icons -->
 
-                <!-- Vertical-and-secondary-menu -->
-                <div class="d-none d-xl-block container">
-                    <div class="row">
-                        <!-- Vertical Menu -->
-                        <div class="col-md-auto d-none d-xl-block">
-                            <div class="max-width-270 min-width-270">
-                                <!-- Basics Accordion -->
-                                <div id="basicsAccordion">
-                                    <!-- Card -->
-                                    <div class="card border-0">
-                                        <div class="card-header card-collapse border-0" id="basicsHeadingOne">
-                                            <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
-                                                data-toggle="collapse"
-                                                data-target="#basicsCollapseOne"
-                                                aria-expanded="true"
-                                                aria-controls="basicsCollapseOne">
-                                                <span class="ml-0 text-gray-90 mr-2">
-                                                    <span class="fa fa-list-ul"></span>
-                                                </span>
-                                                <span class="pl-1 text-gray-90">Tất cả danh mục12313213</span>
-                                            </button>
-                                        </div>
-                                        <div id="basicsCollapseOne" class="collapse show vertical-menu"
-                                            aria-labelledby="basicsHeadingOne"
-                                            data-parent="#basicsAccordion">
-                                            <div class="card-body p-0">
-                                                <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
-                                                    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                                        <ul class="navbar-nav u-header__navbar-nav" id="category-list-top"> 
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Card -->
-                                </div>
-                                <!-- End Basics Accordion -->
-                            </div>
-                        </div>
-                        <!-- End Vertical Menu -->
-                        <!-- Secondary Menu -->
-                        <div class="col">
+                <!-- Primary-menu-wide -->
+                <div class="d-none d-xl-block bg-primary">
+                    <div class="container">
+                        <div class="min-height-45">
                             <!-- Nav -->
-                            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--wide u-header__navbar--no-space">
                                 <!-- Navigation -->
                                 <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                    <ul class="navbar-nav u-header__navbar-nav"> 
-                                        <li class="nav-item u-header__nav-item">
+                                    <ul class="navbar-nav u-header__navbar-nav" id="category-list-top">
+                                         <li class="nav-item u-header__nav-item">
                                             <a class="nav-link u-header__nav-link" href="/category?tag=0" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Tất cả sản phẩm</a>
                                         </li>
                                         <li class="nav-item u-header__nav-item" >
@@ -328,21 +289,17 @@
                                         <li class="nav-item u-header__nav-item">
                                             <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false">Liên hệ</a>
                                         </li> 
-                                        <li class="nav-item u-header__nav-last-item">
-                                            <a class="text-gray-90" href="#" target="_blank">
-                                                Free Shipping toàn quốc
-                                            </a>
-                                        </li>
-                                        <!-- End Button -->
                                     </ul>
                                 </div>
                                 <!-- End Navigation -->
                             </nav>
                             <!-- End Nav -->
                         </div>
-                        <!-- End Secondary Menu -->
                     </div>
                 </div>
+                <!-- End Primary-menu-wide -->
+                <!-- Vertical-and-secondary-menu -->
+                
                 <!-- End Vertical-and-secondary-menu -->
             </div>
         </header>

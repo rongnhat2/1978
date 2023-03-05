@@ -320,6 +320,7 @@ const View = {
         history = history.filter(function(ele){  return ele != item_id;  }) 
         history.push(View.URL.get("id"))
         localStorage.setItem("view", history);
+        console.log(View.URL.get("id"));
         Api.Product.GetOne(View.URL.get("id"))
             .done(res => {
                 View.Images.render_list(res.data.data_product.images);
